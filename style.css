@@ -1,4 +1,4 @@
-/* import font 19th-century industrial steam-powered machinery */
+/* import font Rye */
 @import url('https://fonts.googleapis.com/css2?family=Rye&display=swap');
 
 /* set font family */
@@ -15,17 +15,18 @@ p {
 
 /* Create a navbar with a black background */
 /* navbar must be height 50px and align-itens center with flex */
+/* width must be full */
 .navbar {
     background-color: #333;
     height: 50px;
     display: flex;
     align-items: center;
+    width: 100%;
 }
 
 
 /* Style the links inside the navigation bar */
 .navbar a {
-    float: left;
     display: block;
     color: #f2f2f2;
     text-align: center;
@@ -45,21 +46,13 @@ p {
     color: white;
 }
 
-/* Create a responsive navbar */
-@media screen and (max-width: 600px) {
-    .navbar a {
-        float: none;
-        display: block;
-        width: 100%;
-    }
-}
-
 /* Create a introduction section with a white background color */
 .introduction {
     background-color: #f1f1f1;
     padding: 50px;
     text-align: center;
 }
+
 
 /* Create a details section with a white background color */
 /* create vertical padding 8rem and horizontal 4rem */
@@ -68,8 +61,6 @@ p {
     text-align: center;
     padding: 8rem 4rem;
 }
-
-/* create big margin to showcase title with next operator */
 
 /* Create body with no margin */
 body {
@@ -125,16 +116,17 @@ body {
     padding: 20px;
 }
 
-/* create style to the child div of details div */
+/* create style to div with class .detail */
 /* Create a grid with 3 columns */
 /* Create a grid with 1 rows */
 /* Create a grid gap of 50px */
-.details>div {
+.detail {
     display: grid;
     grid-template-columns: auto auto auto;
     grid-template-rows: auto;
     grid-gap: 50px;
 }
+
 
 /* Style h2 to all sections */
 /* Font size must be 2rem */
@@ -166,6 +158,11 @@ h2 {
 /* Hide the images by default */
 .mySlides {
     display: none;
+}
+
+/* slideshow-container must be relative */
+.slideshow-container {
+    position: relative;
 }
 
 /* Next & previous buttons */
@@ -214,7 +211,6 @@ h2 {
 /* The text must have glass background */
 /* The text must have a padding */
 /* The text must have a border radius */
-
 .text {
     color: white;
     padding: 8px 12px;
@@ -256,36 +252,6 @@ h2 {
     animation-duration: 1.5s;
 }
 
-@-webkit-keyframes fade {
-    from {
-        opacity: .4
-    }
-
-    to {
-        opacity: 1
-    }
-}
-
-@keyframes fade {
-    from {
-        opacity: .4
-    }
-
-    to {
-        opacity: 1
-    }
-}
-
-/* On smaller screens, decrease text size */
-@media only screen and (max-width: 300px) {
-
-    .prev,
-    .next,
-    .text {
-        font-size: 11px
-    }
-}
-
 /* The image must be centered */
 /* The image must have a border radius */
 /* The image must have a tiny box shadow */
@@ -303,6 +269,14 @@ img {
     box-shadow: 0 0 10px 0 rgba(0, 0, 0, 0.2);
     transition: 0.5s;
     cursor: pointer;
+}
+
+/* Adjust img of showcase to mobile aproach */
+@media screen and (max-width: 600px) {
+    img {
+        width: 100vw;
+        height: 50vh;
+    }
 }
 
 /* Create a ending section with a white background color */
@@ -337,4 +311,93 @@ img {
     align-items: center;
     justify-content: center;
     height: 50px;
+}
+
+
+
+
+/* Media queries */
+
+/* On smaller screens, decrease text size */
+@media only screen and (max-width: 300px) {
+
+    .prev,
+    .next,
+    .text {
+        font-size: 11px
+    }
+}
+
+/* centralize navbar text when mobile */
+@media screen and (max-width: 600px) {
+    .navbar {
+        text-align: center;
+    }
+}
+
+/* Create responsivity to mobile for introduction and it's children */
+/* Adjust the width onf the elements for mobile */
+@media screen and (max-width: 600px) {
+    .introduction {
+        width: 100%;
+    }
+    .introduction>div {
+        width: 100%;
+    }
+    /* Change the font size of title to 1.4rem */
+    .introduction h1 {
+        font-size: 1.4rem;
+    }
+}
+
+/* Adjust the detail to be a grid with 1 column per row */
+@media screen and (max-width: 600px) {
+    .detail {
+        display: grid;
+        grid-template-columns: auto;
+        grid-template-rows: auto;
+        grid-gap: 50px;
+    }
+}
+
+/* Adjust the img of showcase to be 0 margin if mobile */
+@media screen and (max-width: 600px) {
+    .showcase img {
+        margin: 0;
+    }
+}
+
+/* Adjust footer to be a grid with 1 column per row */
+@media screen and (max-width: 600px) {
+    .footer {
+        display: grid;
+        grid-template-columns: auto;
+        grid-template-rows: auto;
+        grid-gap: 50px;
+    }
+}
+
+
+
+
+/* Keyframes */
+
+@-webkit-keyframes fade {
+    from {
+        opacity: .4
+    }
+
+    to {
+        opacity: 1
+    }
+}
+
+@keyframes fade {
+    from {
+        opacity: .4
+    }
+
+    to {
+        opacity: 1
+    }
 }
